@@ -4,7 +4,6 @@ import Video from '../views/video/video'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -28,17 +27,6 @@ router.beforeEach((to, from, next) => {
   if (to.path !== from.path) {
     NProgress.start() //进度条加载
   }
-
-  // 处理keepAlive页面缓存的 副作用
-  // let toDepth = to.path.split('/').length
-  // let fromDepth = from.path.split('/').length
-
-  // if (toDepth < fromDepth) {
-  //   // console.log('back...')
-  //   from.meta.keepAlive = false
-  //   to.meta.keepAlive = true
-  // }
-
   next()
 })
 

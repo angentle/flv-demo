@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no " />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>休闲船驾驶证申请</title>
+
+  <script>
+    // px to rem 适配代码
+    ! function (window) {
+      /* 设计图文档宽度 */
+      var docWidth = 750;
+      var doc = window.document,
+        docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+      var recalc = (function refreshRem() {
+        var clientWidth = docEl.getBoundingClientRect().width;
+        /* 8.55：小于320px不再缩小，11.2：大于420px不再放大 */
+        docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 11.2), 8.55) * 5 + 'px';
+        return refreshRem;
+      })();
+      /* 添加倍屏标识，安卓为1 */
+      docEl.setAttribute('data-dpr', window.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio : 1);
+      if (/iP(hone|od|ad)/.test(window.navigator.userAgent)) {
+        /* 添加IOS标识 */
+        doc.documentElement.classList.add('ios');
+        if (parseInt(window.navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/)[1], 10) >= 8)
+          doc.documentElement.classList.add('hairline');
+      }
+      if (!doc.addEventListener) return;
+      window.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    }(window);
+  </script>
+  <script src="https://isz-open.sz.gov.cn/lib/jpasc-0.4.0.js"></script>
+  <!-- <script src="http://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.2.0"></script> -->
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script>
+    window.onload = function () {
+      window.sc = sc
+      // window.vConsole = new window.VConsole()
+    }
+  </script>
+
+</body>
+
+</html>

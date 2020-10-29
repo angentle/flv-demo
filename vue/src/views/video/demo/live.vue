@@ -6,7 +6,7 @@ export default {
   },
   data() {
     return {
-      url: "http:xxxxx/flv.js"
+      url: "http:xxxxx/xxx.flv" // 后端提供.flv格式的实时播放文件url
     };
   },
   render() {
